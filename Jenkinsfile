@@ -19,7 +19,6 @@ node {
          * Just an example */
 
         app.inside {
-            sh 'sh check_plugin.sh'
             sh 'echo "Tests passed"'
         }
     }
