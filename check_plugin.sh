@@ -1,7 +1,7 @@
 #!/bin/sh
 
-file = "/usr/share/jenkins/plugins.txt"
-plugin = "role-strategy"
+file="/usr/share/jenkins/plugins.txt"
+plugin="role-strategy"
 
 if [ grep -q  "$pligin" $file ];then
    echo "Found Plugin"
