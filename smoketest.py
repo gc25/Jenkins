@@ -1,7 +1,7 @@
 import time
 import sys
 
-from subprocess import check_call
+from subprocess import check_call,run
 from urllib.request import urlopen
 
 build =  sys.argv[0]
@@ -16,4 +16,4 @@ time.sleep(60)
 try:
     urlopen("http://localhost:8080").read()
 finally:
-    check_call("docker kill smk".split())
+    run("docker kill smk".split())
