@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("kgrishma/my-image:${env.BUILD_ID}")
+        app = docker.build("kgrishma/jenkins:v1")
     }
 
     stage('Test image') {
@@ -19,7 +19,7 @@ node {
          * Just an example */
 
         app.inside {
-            sh "python3 smoketest.py ${env.BUILD_ID}"
+            sh "python3 smoketest.py"
             sh 'echo "Tests passed"'
         }
     }
@@ -30,7 +30,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            app.push("${env.BUILD_ID}")       
+            app.push("v1")       
         }
     }
 }
