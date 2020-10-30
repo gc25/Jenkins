@@ -3,11 +3,6 @@ from shlex import split
 from subprocess import check_call
 from urllib.request import urlopen
 
-kill_command = "lsof -t -i tcp:9191 | xargs kill -9"
-kill_args = split(kill_command)
-
-check_call(kill_args)
-
 command_line = "docker run --rm -d --name=smk -p 9191:8080 -p 50350:50000 --user root kgrishma/jenkins:v1 sleep 10"
 docker_args = split(command_line)
 
