@@ -19,6 +19,7 @@ node {
          * Just an example */
 
         app.inside {
+            sh 'python smoketest.py'
             sh 'echo "Tests passed"'
         }
     }
