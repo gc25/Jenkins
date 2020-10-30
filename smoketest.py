@@ -6,7 +6,7 @@ from urllib.request import urlopen
 
 
 check_call(
-    "docker run --rm -d --name=smk -p 8181:8080 -p 50340:50000 --user root -v /var/run/docker.sock:/var/run/docker.sock kgrishma/my-image:26".split()
+    "docker run --rm -d --name=smk -p 8181:8080 -p 50340:50000 --user root -v /var/run/docker.sock:/var/run/docker.sock kgrishma/my-image:28".split()
 )
 # Wait for the server to start. A better implementation
 # would poll in a loop:
