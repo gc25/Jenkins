@@ -1,1 +1,5 @@
 role-strategy
+workflow-aggregator
+copy-data-to-workspace-plugin
+docker-workflow
+gitlab-plugin

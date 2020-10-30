@@ -10,6 +10,7 @@ ENV JAVA_OPTS -Djenkins.install.runSetupWizard=false
 	
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 COPY config.xml /var/jenkins_home/config.xml
+COPY credentials.xml /var/jenkins_home/credentials.xml
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
 USER root
 RUN apk add docker
