@@ -1,12 +1,12 @@
 import time
 import sys
 
-from subprocess import run
+from subprocess import check_call
 from urllib.request import urlopen
 
-build =  sys.argv[0]
-run(
-    "(docker run --rm --name=smk -p 8080:80 -d kgrishma/my-jenkins:%i), build".split()
+
+check_call(
+    "docker run --rm -d --name=smk -p 8080:8080 -p 50000:50000 --user root -v /var/run/docker.sock:/var/run/docker.sock kgrishma/my-jenkins:21".split()
 )
 # Wait for the server to start. A better implementation
 # would poll in a loop:
@@ -16,4 +16,4 @@ time.sleep(60)
 try:
     urlopen("http://localhost:8080").read()
 finally:
-    run("docker kill smk".split())
+    check_call("docker kill smk".split())
