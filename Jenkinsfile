@@ -19,7 +19,7 @@ node {
          * Just an example */
 
         app.inside {
-            sh 'python3 smoketest.py'
+            sh "python3 smoketest.py ${env.BUILD_ID}"
             sh 'echo "Tests passed"'
         }
     }
