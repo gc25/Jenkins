@@ -1,9 +1,12 @@
 import time
+import sys
+
 from subprocess import check_call
 from urllib.request import urlopen
 
+build =  sys.argv[0]
 check_call(
-     “docker run --rm -d --name=smk -p 8080:8080 -p 50000:50000 --user root -v /var/run/docker.sock:/var/run/docker.sock my-image”.split()
+    "(docker run --rm --name=smk -p 8080:80 -d kgrishma/my-jenkins:%i), build".split()
 )
 # Wait for the server to start. A better implementation
 # would poll in a loop:
