@@ -1,7 +1,7 @@
 import time
 import sys
 
-from subprocess import check_call,run
+from subprocess import run
 from urllib.request import urlopen
 
 build =  sys.argv[0]
