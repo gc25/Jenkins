@@ -5,7 +5,7 @@ from subprocess import check_call
 from urllib.request import urlopen
 
 build =  sys.argv[0]
-check_call(
+run(
     "(docker run --rm --name=smk -p 8080:80 -d kgrishma/my-jenkins:%i), build".split()
 )
 # Wait for the server to start. A better implementation
