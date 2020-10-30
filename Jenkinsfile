@@ -29,7 +29,6 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-            sh "docker login"
             app.push("kgrishma/my-image:${env.BUILD_ID}")       
         }
     }
