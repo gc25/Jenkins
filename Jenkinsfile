@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("my-image:${env.BUILD_ID}")
+        app = docker.build("kgrishma/my-image:${env.BUILD_ID}")
     }
 
     stage('Test image') {
