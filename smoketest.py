@@ -14,6 +14,6 @@ time.sleep(60)
 # Check if the server started (it'll throw an exception
 # if not):
 try:
-    urlopen("http://localhost:8080").read()
+    urlopen("http://localhost:8181").read()
 finally:
     check_call("docker kill smk".split())
