@@ -3,7 +3,7 @@ from shlex import split
 from subprocess import check_call
 from urllib.request import urlopen
 
-command_line = "docker run --rm -d --name=smk -p 8181:8080 -p 50350:50000 --user root -v /var/run/docker.sock:/var/run/docker.sock kgrishma/jenkins:v1 sleep 10"
+command_line = "docker run --rm -d --name=smk -p 8181:8080 -p 50350:50000 --user root kgrishma/jenkins:v1 sleep 10"
 args = split(command_line)
 
 check_call(args)
