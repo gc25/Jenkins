@@ -18,7 +18,7 @@ node {
         /* Ideally, we would run a test framework against our image.
          * Just an example */
 
-        sh "python3 smoketest.py"
+        sh "python3 smoke_test.py"
         app.inside {
             sh 'echo "Tests passed"'
         }
